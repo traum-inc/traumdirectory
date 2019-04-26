@@ -1,0 +1,10 @@
+PLAN
+WORKLOG
+/notes
+/media
+/tmp
+__pycache__
+.DS_Store
+/virtualenv
+/build
+/dist
