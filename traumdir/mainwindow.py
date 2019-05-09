@@ -18,7 +18,7 @@ import config
 
 
 log = logging.getLogger('app')
-app_title = 'Traum Encoder'
+app_title = 'Traum Directory'
 
 icon_cache = {}
 def get_icon(name):
