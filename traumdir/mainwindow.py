@@ -18,7 +18,7 @@ import config
 
 
 log = logging.getLogger('app')
-
+app_title = 'Traum Encoder'
 
 icon_cache = {}
 def get_icon(name):
@@ -44,7 +44,8 @@ class MainWindow(QMainWindow):
 
     def _init_ui(self):
         self.setMinimumSize(QSize(640, 480))
-        self.setWindowTitle('traumDir')
+        self.setWindowTitle(app_title)
+        qApp.setApplicationDisplayName(app_title)
         #self.setAcceptDrops(True)
         self._status('Ready')
 
@@ -76,15 +77,6 @@ class MainWindow(QMainWindow):
 
         menu = menubar.addMenu('&File')
         menu.addAction(action_quit)
-
-        #menubar = self.menuBar()
-        #menu = menubar.addMenu('&File')
-        #menu.addAction(action_import_videos)
-        #menu.addAction(action_import_folder)
-        #menu.addSeparator()
-        #menu.addAction(action_quit)
-        #menu = menubar.addMenu('&Edit')
-        #menu.addAction(action_delete)
 
         toolbar = self.addToolBar('toolbar')
         for action in [action_encode]:
@@ -161,7 +153,3 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, 'Generation failed', repr(ex))
 
         self._status('Success')
-
-        #log.info(f'import: {filenames}')
-        #if filenames:
-        #    self._start_scan(filenames)

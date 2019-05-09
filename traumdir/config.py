@@ -1,6 +1,13 @@
-ENGINE_POLL_INTERVAL = 200
-DEFAULT_SEQUENCE_FRAMERATE = (30, 1)
-DEFAULT_OUTPUT_SUFFIX = '_prores.mov'
-MEDIA_LIST_SHORT_DETAILS = True
-CLIQUE_MINIMUM_ITEMS = 2
-CLIQUE_CONTIGUOUS_ONLY = True
+from configparser import ConfigParser
+
+config = ConfigParser()
+
+config['log'] = {
+    'stderr': False,
+    'color': False,
+    'file': '',
+    'append': True,
+    'level': 'debug',
+    }
+
+config.read('config.ini')
